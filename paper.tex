@@ -1,0 +1,157 @@
+\documentclass[twocolumn]{article}
+\usepackage{flushend}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman,english]{babel}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{framed}
+\usepackage{listings}
+\usepackage{paralist}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+\newcommand{\stt}{Soft\-ware\-tech\-nik-Trends}
+\raggedbottom
+\input{trendsstyle.tex}
+
+\newcommand{\todo}[1]{} %{{\small \textcolor{red}{TODO: #1}}}
+
+\usepackage{etoolbox}
+\patchcmd\thebibliography
+ {\labelsep}
+ {\labelsep\itemsep=-5pt\relax}
+ {}
+ {\typeout{Couldn't patch the command}}
+
+\begin{document}
+\setlength{\belowcaptionskip}{-10pt}
+\twocolumn[{
+\Large
+\center{Vise Coding}
+\vspace{3mm}
+\normalsize
+\center{David Faragó, Mediform / Freelancer, Karlsruhe}
+\vspace{3mm}
+\slshape
+}]
+
+\section{Abstract}
+Current news claims that AI is replacing software developers~\cite{Lanz23} TODO.
+However, such proclamations may primarily serve corporate narratives -- justifying layoffs or promoting AI products rather than reflecting reality.
+We examine data on AI adoption and its effects, revealing that AI-assisted software development tools (``AI coding'' for short) are getting better,
+but software engineering is far from full automation: 
+The current hype fails to distinguish between what large language models (LLMs) can and cannot do effectively.
+This lack of nuance has led to AI coding practices that produce code unsuitable for production environments and maintenance.
+%This problem culminates in ``Vibe Coding'', i.e. blindly accepting AI-generated code suggestions with no understanding or review.
+Objective data signals that this kind of AI coding will lead to a software quality crisis.
+The popularity of ``Vibe Coding'' -- blindly accepting AI's suggestions with no understanding or review -- aggravates the downward spiral:
+more and more software security holes, buggy behavior, performance decrease, and even whole projects going under [GB25,MR25,MS25,SV25b]. 
+In response to these concerns, we introduce ``Vise Coding'', a term coined immediately after ``Vibe Coding'' emerged \cite{DF25},
+which advocates for a more disciplined integration of AI:
+like a craftsman's vise, documentation and process guides and checks the LLM to produce clean, production-ready code.
+
+This paper firstly presents alarming data about the emerging software quality crisis,
+then introduces Vise Coding as a solution: we detail its process, explain the necessary context engineering,
+and provide an evaluation that demonstrates both the significant benefits of Vise Coding,
+but also the limits of current AI coding.
+
+Keywords: {\em LLM-based coding agents, AI-assisted coding, software quality, Vibe coding, Vise coding}
+
+\section{Introduction}
+
+Vise as a craftsman
+\begin{compactenum}
+\item {\bfseries Merge best practices} AI-coding, software craftsmanship
+\end{compactenum}
+
+\begin{figure}[hbt!]
+\begin{center}
+\fbox{\includegraphics[width=0.2\textwidth]{figures/Dialog_HappyPath_En}}\fbox{\includegraphics[width=0.26\textwidth]{figures/Dialog_UnhappyPath_En}}
+\caption{Software Quality}
+\label{fig:swqual}
+\end{center}
+\end{figure}
+
+
+\section{Conclusion}
+
+In conclusion
+
+\section{Acknowledgments}
+
+Thanks go to Jochen Krause, CEO of Mediform GmbH, for offering the opportunity to work on this interesting task, and to my colleagues for the great work environment.
+
+Thanks go to Cognilytica, LLC, which have the copyright and trademark for the CPMAI methodology and images (use here provided with written permission).
+
+
+\section{Bibliography}
+
+%\backmatter
+%\hbadness=2000
+%\bibliographystyle{myplainnat}
+\bibliography{vise}
+
+%\hspace{3ex}[Akiba24] Akiba, Takuya, et al. "Evolutionary optimization of model merging recipes." arXiv preprint arXiv:2403.13187. 2024.
+%
+%[Brown20] Brown, Tom, et al. "Language models are few-shot learners." Advances in neural information processing systems 33. 2020.
+%
+%[Chang24] Chang, Yupeng, et al. "A survey on evaluation of large language models." ACM Transactions on Intelligent Systems and Technology 15.3 (2024): 1-45.
+%
+%[Cognilytica] Cognilytica. “The Seven Patterns of AI”. https://www.cognilytica.com/the-seven-patterns-of-ai/
+%
+%[CPMAI] Cognilytica: “Cognitive Cognitive Project Management For AI”, https://www.cognilytica.com/what-is-the-cognitive-project-management-for-ai-cpmai-methodology/
+%
+%[CRISP99] “Cross Industry Standard Process for Data Mining 1.0”. https://web.archive.org/web/20220401041957/https:
+%//www.the-modeling-agency.com/crisp-dm.pdf
+%
+%[Dettmers22] T. Dettmers, M. Lewis, Y. Belkada, and L. Zettlemoyer. LLM.int8(): 8-bit matrix multiplication for transformers at scale. Advances in Neural Information Processing Systems 35. 2022.
+%
+%[Farago23] Faragó, David. "Engineering A Reliable Prompt For Generating Unit Tests -- Prompt engineering for QA \& QA for prompt engineering." Softwaretechnik-Trends (STT) 43(3). 2023.
+%
+%[Gao23] Gao, Leo, et al. “A framework for few-shot language model evaluation. 2023. https://zenodo.org/records/10256836
+%
+%[Github23] Github. “How to build an enterprise LLM application: Lessons from GitHub Copilot”. https://github.blog/2023-09-06-how-to-build-an-enterprise-llm-application-lessons-from-github-copilot/.
+%
+%[Gra23] Gramener Blog: "Large Language Models (LLMs): A Technology Gifted by Aliens Without a Manual ". 2023. https://blog.gramener.com/large-language-models-llms-technology
+%
+%[HF24] Hugging Face. "Open LLM Leader- board". 2024. https://huggingface.co/spaces/
+%HuggingFaceH4/open$\_$llm$\_$leaderboard
+%
+%[Hosseini20] Hosseini-Asl, Ehsan, et al. "A simple language model for task-oriented dialogue." Advances in Neural Information Processing Systems 33. 2020.
+%
+%[Kaplan20] Kaplan, Jared, et al. "Scaling laws for neural language models." arXiv preprint arXiv:2001.08361. 2020. 
+%
+%[Ke23] Ke, Zixuan, et al. "Continual pre-training of language models." arXiv preprint arXiv:2302.03241. 2023.
+%
+%[Liu22] Liu, Haokun, et al. "Few-shot parameter-efficient fine-tuning is better and cheaper than in-context learning." Advances in Neural Information Processing Systems 35. 2022.
+%
+%[Mediform24] Mediform: “Ältere Menschen buchen problemlos Termine via MediVoice”. https://tinyurl.com/medivoice.
+%
+%[MediVoice] Mediform. “Die Revolution für das Praxistelefon”. https://mediform.io/medivoice/
+%
+%[Minaee24] Minaee, Shervin, et al. "Large language models: A survey." arXiv preprint arXiv:2402.06196. 2024.
+%
+%[Röttger24] Röttger, Nils, Gerhard Runze, and Verena Dietrich. Basiswissen KI-Testen: Qualität von und mit KI-basierten Systemen: Aus-und Weiterbildung zum Certified Tester AI Testing: Foundation Level Specialist nach ISTQB®-Standard. punkt.verlag. 2024.
+%
+%[Studer21] Studer, Stefan, et al. "Towards CRISP-ML (Q): a machine learning process model with quality assurance methodology." Machine learning and knowledge extraction 3.2. 2021.
+%
+%[Vaswani17] Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30. 2017.
+%
+%[Wang24] Chen, Wang, et al. "Systems engineering issues for industry applications of large language model." Applied Soft Computing 151. 2024.
+%
+%\iffalse
+%
+%\bibliographystyle{unsrt}
+%\begin{thebibliography}{10}
+%\footnotesize
+%
+%\bibitem{Lanz23} Jose Antonio Lanz. {\em Stability AI CEO: there Will Be No (Human) Programmers in Five Years}. 2023. 
+%
+%
+%  
+%\end{thebibliography}
+%\fi
+\end{document}
