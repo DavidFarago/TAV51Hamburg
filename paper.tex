@@ -5,6 +5,15 @@
 \usepackage[ngerman,english]{babel}
 \usepackage{graphicx}
 \usepackage{tikz}
+%\usepackage[backend=biber, style=apa, url=false]{biblatex}
+%\addbibresource{vise.bib}
+%\usepackage{hyperref}
+%% Define a new field format for the URL/DOI to create a hidden link
+%\DeclareFieldFormat{url}{%
+%  \iffieldundef{url}%
+%    {}%
+%    {\href{\thefield{url}}{#1}}%
+%}
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{framed}
@@ -93,13 +102,12 @@ Then Vise Coding is introduced as a systematic countermeasure, followed by its e
 \section{Software Development Status Quo}
 
 \begin{figure}[hbt!]
-  \begin{center}
   \vspace{-4mm}
-  \includegraphics[width=0.48\textwidth]{figures/allStats_v4}
+  \hspace{-2.5mm}
+  \includegraphics[width=0.507\textwidth]{figures/allStats_v4}
   \vspace{-7mm}
 \caption{Status quo and trends of AI coding: high adoption, low productivity and quality}
 \label{fig:statusquo}
-\end{center}
 \end{figure}
 
 The {\color{blue}$\blacksquare$} plot in Fig.~\ref{fig:statusquo} depicts
@@ -185,7 +193,7 @@ Of course changes to the persistent PRD are reviewed, too.
 \begin{figure}[hbt!]
   \begin{center}
   \vspace{-4mm}
-  \includegraphics[width=0.36\textwidth]{figures/vise_process_v2}
+  \includegraphics[width=0.45\textwidth]{figures/vise_process_v2}
   \vspace{-4mm}
 \caption{Iterative Vise Coding process}
 \label{fig:process}
@@ -230,13 +238,12 @@ e.g. for testing you could specify
 Further context engineering features are available as MCP servers, e.g. Shrimp Task Manager and Sequential Thinking MAS.
 
 \begin{figure}[hbt!]
-  \begin{center}
   \vspace{-2mm}
-  \includegraphics[width=0.499\textwidth]{figures/pipeline_vs_subtask_v3}
+  \hspace{-2.5mm}
+  \includegraphics[width=0.507\textwidth]{figures/pipeline_vs_subtask_v3}
   \vspace{-8mm}
 \caption{Modularization into multiple sessions}
 \label{fig:pipelinesubtask}
-\end{center}
 \end{figure}
 
 \section{Evaluation}
@@ -269,6 +276,17 @@ Consistently good (but not very good) results were achieved with Cline with Memo
 
 There are many aspects to context engineering. We consider pipelines vs subroutines, and how good context engineering can cope with context size.
 
+%LAYOUT HACK, should be at the end of this subsection
+\begin{figure*}[hbt!]
+  \begin{center}
+  \vspace{-1mm}
+  \fbox{\includegraphics[width=0.99\textwidth]{figures/session_grade_explorer_v1}}
+  \vspace{-5mm}
+\caption{Grades depending on total session tokens}
+\label{fig:evaltool}
+\end{center}
+\end{figure*}
+
 For pipelines, you can decide dynamically when to shrink your context, when to start a new task, or when to create and iteratively execute a workflow.
 This gives great flexibility. For subroutines, you have less flexibility because you need to pre-define your subroutines. You usually have 5 to 20 that you can highly optimize. If the are suitable for your task, you get reliably better results then with pipelines. 
 Fig.~\ref{fig:pipelinesubtask} gives an example for the \lstinline|string-calculator-kata|, where subroutines led to better results at half the price.
@@ -276,15 +294,6 @@ Fig.~\ref{fig:pipelinesubtask} gives an example for the \lstinline|string-calcul
 Fig.~\ref{fig:evaltool} plots the critically graded Vise Coding sessions (see Sec.\ref{sec:gradedsessions}) depending on the total tokens in the whole session:
 the larger the session, the better the grades, showing that adding all the relevant context helps in Vise Coding, and that context engineering can cope with large context.
 
-\begin{figure}[hbt!]
-  \begin{center}
-  \vspace{-2mm}
-  \includegraphics[width=0.499\textwidth]{figures/session_grade_explorer_v1}
-  \vspace{-7mm}
-\caption{Grades depending on total session tokens}
-\label{fig:evaltool}
-\end{center}
-\end{figure}
 
 \subsection{Vibe Coding vs Vise Coding}
 
@@ -321,7 +330,7 @@ the degree of autonomy may be increased.
 \begin{figure}[hbt!]
   \begin{center}
   \vspace{-2mm}
-  \includegraphics[width=0.35\textwidth]{figures/vibe_vise_non_ai_v1}
+  \includegraphics[width=0.47\textwidth]{figures/vibe_vise_non_ai_v2}
   \vspace{-5mm}
 \caption{Vibe Coding vs Vise Coding productivity}
 \label{fig:vibevise}
@@ -329,8 +338,8 @@ the degree of autonomy may be increased.
 \end{figure}
 
 %\hbadness=2000
+%\printbibliography
 \bibliographystyle{plain}
-%\footnotesize
-\tiny
 \bibliography{vise}
+
 \end{document}
